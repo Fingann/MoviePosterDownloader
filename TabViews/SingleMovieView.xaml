@@ -1,0 +1,33 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MoviePosterDownloader.TabViews"
+             xmlns:Custom="http://metro.mahapps.com/winfx/xaml/controls" x:Class="MoviePosterDownloader.TabViews.SingleMovieView"
+             mc:Ignorable="d" 
+             xmlns:converter="clr-namespace:MoviePosterDownloader.Converters"
+             DataContext="{Binding SingleMovie, Source={StaticResource Locator}}"
+             Background="{StaticResource MaterialDesignBackground}"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <converter:ByteToImageSourceConverter x:Key="ByteToImageConverter"></converter:ByteToImageSourceConverter>
+    </UserControl.Resources>
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="84*"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Top" LastChildFill="True">
+            <Button Command="{Binding SearchForMovieCommand}" IsDefault="True" CommandParameter="{Binding ElementName=SearchTextBox, Path=Text}" Content="Searh" DockPanel.Dock="Right"/>
+            <TextBox x:Name="SearchTextBox"  DockPanel.Dock="Left"   TextWrapping="Wrap" Text=""  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Custom:TextBoxHelper.Watermark="Search"/>
+        </DockPanel>
+        <DockPanel Grid.Row="1" LastChildFill="True">
+            <Button  IsEnabled="{Binding SaveEnabled, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Bottom" Command="{Binding SaveMoviePosterCommand}" CommandParameter="{Binding ElementName=SearchTextBox, Path=Text}" Content="Save Poster" Margin="0,5,0,0"></Button>
+            <Image Source="{Binding Poster.PosterBytes, Converter={StaticResource ByteToImageConverter}, UpdateSourceTrigger=PropertyChanged }" RenderOptions.BitmapScalingMode="Fant"
+                    DockPanel.Dock="Top"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            
+        </DockPanel>
+    </Grid>
+</UserControl>

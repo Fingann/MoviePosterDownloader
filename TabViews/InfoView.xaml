@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="MoviePosterDownloader.TabViews.InfoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MoviePosterDownloader.TabViews"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500">
+    <Grid>
+        <RichTextBox HorizontalAlignment="Left" IsDocumentEnabled="True" IsReadOnly="True" Margin="5"  VerticalAlignment="Top">
+            <FlowDocument>
+                <Paragraph Foreground="{StaticResource AccentColorBrush}" FontSize="24" Margin="0,0,0,5" > Welcome to MoviePosterDownloader</Paragraph>
+                <Paragraph Margin="10,0,0,0"  FontSize="16">I made this application because my movie collection lacked posters and i really wanted posters.</Paragraph>
+                <Paragraph Foreground="{StaticResource AccentColorBrush}" Margin="0,10,0,5" FontSize="24">Media Preparation</Paragraph>
+                <Paragraph Margin="10,0,0,0" FontSize="16">I desided to use the plex file naming convention as the correct way to organize the folders for detection.</Paragraph>
+                <Paragraph  Foreground="{StaticResource AccentColorBrush4}" Margin="10,4,0,0" FontSize="12">https://support.plex.tv/hc/en-us/articles/200381023-Naming-Movie-files</Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+    </Grid>
+</UserControl>

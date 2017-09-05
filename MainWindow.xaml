@@ -1,0 +1,46 @@
+﻿<controls:MetroWindow  x:Class="MoviePosterDownloader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.galasoft.ch/ignore"
+        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:tabView="clr-namespace:MoviePosterDownloader.TabViews"
+        xmlns:tabviewModel="clr-namespace:MoviePosterDownloader.TabViewModels"
+        mc:Ignorable="d ignore"
+        Height="507.455"
+        Width="539.075"
+        Title="MVVM Light Application"
+        DataContext="{Binding Main, Source={StaticResource Locator}}">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Skins/MainSkin.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <DataTemplate DataType="{x:Type tabviewModel:SingleMovieViewModel}">
+                <tabView:SingleMovieView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type tabviewModel:FolderMovieViewModel}">
+                <tabView:FolderMovieView />
+            </DataTemplate>
+           
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        <controls:MetroTabControl  controls:TabControlHelper.Transition="Right">
+            <TabItem Header="Search movie">
+               <tabView:SingleMovieView></tabView:SingleMovieView>
+            </TabItem>
+            <TabItem Header="Folder Downloader">
+                <tabView:FolderMovieView></tabView:FolderMovieView>
+            </TabItem>
+            <TabItem Header="Info">
+                <tabView:InfoView></tabView:InfoView>
+            </TabItem>
+        </controls:MetroTabControl>
+    </Grid>
+</controls:MetroWindow>
+

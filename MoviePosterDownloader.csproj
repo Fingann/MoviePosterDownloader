@@ -89,7 +89,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Converters\ByteToImageSourceConverter.cs" />
-    <Compile Include="Helpers\ObservableCollectionWithItemNotify.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="TabViewModels\FolderMovieViewModel.cs" />
     <Compile Include="TabViewModels\SingleMovieViewModel.cs" />

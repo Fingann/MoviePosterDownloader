@@ -1,50 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2017\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
 <FxCopReport Version="15.0">
- <Targets>
-  <Target Name="C:\Users\sf9398\documents\visual studio 2017\Projects\MoviePosterDownloader\MoviePosterDownloader\bin\Debug\MoviePosterDownloader.exe">
-   <Modules>
-    <Module Name="movieposterdownloader.exe">
-     <Namespaces>
-      <Namespace Name="MoviePosterDownloader.Helpers">
-       <Types>
-        <Type Name="ObservableCollectionWithItemNotify`1" Kind="Class" Accessibility="Public" ExternallyVisible="True">
-         <Members>
-          <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
-           <Messages>
-            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2017-09-05 06:54:19Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\sf9398\documents\visual studio 2017\Projects\MoviePosterDownloader\MoviePosterDownloader\Helpers" File="ObservableCollectionWithItemNotify.cs" Line="15">'ObservableCollectionWithItemNotify&lt;T&gt;.ObservableCollectionWithItemNotify()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;ObservableCollectionWithItemNotify&lt;T&gt;..ctor()&#xD;&#xA;ObservableCollection&lt;T&gt;.add_CollectionChanged(NotifyCollectionChangedEventHandler):Void</Issue>
-            </Message>
-           </Messages>
-          </Member>
-          <Member Name="#.ctor(System.Collections.Generic.IEnumerable`1&lt;!0&gt;)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
-           <Messages>
-            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2017-09-05 06:54:19Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\sf9398\documents\visual studio 2017\Projects\MoviePosterDownloader\MoviePosterDownloader\Helpers" File="ObservableCollectionWithItemNotify.cs" Line="21">'ObservableCollectionWithItemNotify&lt;T&gt;.ObservableCollectionWithItemNotify(IEnumerable&lt;T&gt;)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;ObservableCollectionWithItemNotify&lt;T&gt;..ctor(IEnumerable&lt;T&gt;)&#xD;&#xA;ObservableCollection&lt;T&gt;.add_CollectionChanged(NotifyCollectionChangedEventHandler):Void</Issue>
-            </Message>
-           </Messages>
-          </Member>
-         </Members>
-        </Type>
-       </Types>
-      </Namespace>
-     </Namespaces>
-    </Module>
-   </Modules>
-  </Target>
- </Targets>
- <Rules>
-  <Rule TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214">
-   <Name>Do not call overridable methods in constructors</Name>
-   <Description>Virtual methods defined on the class should not be called from constructors. If a derived class has overridden the method, the derived class version will be called (before the derived class constructor is called).</Description>
-   <Resolution Name="Default">{0} contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: {1}</Resolution>
-   <Owner />
-   <Url>http://msdn.microsoft.com/library/ms182331.aspx</Url>
-   <Email>[none]</Email>
-   <MessageLevel Certainty="95">CriticalWarning</MessageLevel>
-   <File Name="usagerules.dll" Version="15.0.0.0" />
-  </Rule>
- </Rules>
  <Localized>
   <String Key="Category">Category</String>
   <String Key="Certainty">Certainty</String>

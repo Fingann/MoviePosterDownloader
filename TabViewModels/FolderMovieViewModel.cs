@@ -7,9 +7,7 @@ using System.Threading.Tasks.Dataflow;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using MoviePoster.Core.SavePoster;
-using MoviePosterDownloader.Helpers;
 using MoviePosterDownloader.Model;
-using TheMovieDatabaseHandler;
 using TheMovieDatabaseHandler.Pipeline;
 
 namespace MoviePosterDownloader.TabViewModels

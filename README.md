@@ -5,12 +5,12 @@ Application for downloading movie posters for your movie collection. Based on th
 ## Search Movie
 Here you can search for a single movie and save the poster to sa spesified location. 
 
-![alt](https://i.imgur.com/jhyXWnY.png)
+![Single Movie](https://i.imgur.com/jhyXWnY.png)
 
 ## Folder Downlaoder
 Here you can drag and drop your movie folder and it wil find a poster for your movies.
 
-![alt](https://i.imgur.com/azx4Y8e.png)
+![Movie Collection](https://i.imgur.com/azx4Y8e.png)
 
 
 ## WIP
